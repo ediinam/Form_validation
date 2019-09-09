@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Validacija</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style></style>
+  </head>
+
+  <body>
+    <!-- Div to show the scanner -->
+    <input type="text" id="input-field" />
+    <select id="select-check"
+      >Provjeri
+      <option value="ime">Ime</option>
+      <option value="mail">Mail</option>
+    </select>
+    <button id="btn">Check</button>
+    <p id="rezultat"></p>
+    <!-- Js file koji se mijenja po potrebi -->
+    <script src="validation.js"></script>
+
+    <script>
+      document.getElementById("btn").addEventListener("click", function() {
+        var opcija = document.getElementById("select-check").value;
+        if (opcija == "ime") {
+          document.getElementById("rezultat").innerHTML = checkName(
+            "input-field"
+          );
+        } else if (opcija == "mail") {
+          document.getElementById("rezultat").innerHTML = checkEmail(
+            "input-field"
+          );
+        }
+      });
+    </script>
+  </body>
+</html>
